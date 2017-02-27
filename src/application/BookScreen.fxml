@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import jfxtras.scene.control.*?>
+<?import jfxtras.labs.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="588.0" prefWidth="968.0" style="-fx-background-color: #1B3A1B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookScreen">
+	<children>
+      <BorderPane layoutX="80.0" layoutY="88.0" prefHeight="588.0" prefWidth="701.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="76.0" prefWidth="1314.0" BorderPane.alignment="CENTER">
+               <children>
+            		<Button alignment="BOTTOM_LEFT" mnemonicParsing="false" stylesheets="@../../../QL/src/application/application.css" text="Back">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" stylesheets="@../../../QL/src/application/application.css" text="Next">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="1160.0" />
+                     </HBox.margin>
+                  </Button>
+                 
+                    
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="358.0">
+                     <children>
+                        <ImageView fitHeight="58.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="738.0">
+                     <children>
+                  		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="697.0" text="Welcome to our booking system" textAlignment="CENTER" textFill="#fffdfd">
+                  			<font>
+                  				<Font name="System Bold" size="28.0" />
+                  			</font>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                  		</Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="120.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="368.0" prefWidth="273.0" BorderPane.alignment="CENTER">
+               <children>
+            		<Label alignment="CENTER" prefHeight="25.0" prefWidth="273.0" text="Who do you want to meet with?" textFill="WHITE">
+            			<font>
+            				<Font name="System Bold" size="16.0" />
+            			</font>
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin>
+            		</Label>
+            		<MenuButton fx:id="pp" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="153.0" stylesheets="@application.css" text="Professors" textAlignment="CENTER" textFill="WHITE">
+            			<items>
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="John Smith" />
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTableC" text="Alan Harper" />
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="Charlie Sheene" />
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTableC" text="Barry Joe" />
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="Frank Lampard" />
+            			</items>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" top="40.0" />
+                     </VBox.margin>
+            		</MenuButton>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <VBox prefHeight="412.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="car" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="69.0" prefWidth="832.0" text="John Smith's Time Table" textAlignment="CENTER" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                
+                  <Label fx:id="reg" alignment="CENTER" prefHeight="25.0" prefWidth="775.0" text="John Smith's Time Table" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <GridPane fx:id="showGrid" alignment="CENTER" prefHeight="376.0" prefWidth="941.0" visible="false">
+                     <children>
+                        <Text id="dark-blue" fx:id="monday" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" textAlignment="CENTER" wrappingWidth="94.576171875">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button id="green" fx:id="hour11" mnemonicParsing="false" onAction="#busy" prefHeight="33.0" prefWidth="88.0" stylesheets="@application.css" text="10:00" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button id="green" mnemonicParsing="false" onAction="#busy" prefHeight="36.0" prefWidth="97.0" stylesheets="@application.css" text="10:00" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="10:00" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="10:00" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="36.0" prefWidth="88.0" stylesheets="@application.css" text="10:45" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="14.0" prefWidth="97.0" stylesheets="@application.css" text="10:45" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="10:45" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" stylesheets="@application.css" text="10:45" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" stylesheets="@application.css" text="11:30" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" stylesheets="@application.css" text="13:00" textAlignment="CENTER" GridPane.rowIndex="4" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="4.0" prefWidth="97.0" stylesheets="@application.css" text="11:30" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="11:30" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="11:30" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" stylesheets="@application.css" text="13:45" textAlignment="CENTER" GridPane.rowIndex="5" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="6.0" prefWidth="97.0" stylesheets="@application.css" text="13:00" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="13:00" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="13:00" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Button id="green" fx:id="hour40" mnemonicParsing="false" onAction="#busy1" prefHeight="1.0" prefWidth="97.0" stylesheets="@application.css" text="13:45" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="13:45" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" stylesheets="@application.css" text="13:45" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Text id="dark-blue" fx:id="monday4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" textAlignment="CENTER" wrappingWidth="94.576171875" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text id="dark-blue" fx:id="monday3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" textAlignment="CENTER" wrappingWidth="106.576171875" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text id="dark-blue" fx:id="monday2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" textAlignment="CENTER" wrappingWidth="105.576171875" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text id="dark-blue" fx:id="monday1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" textAlignment="CENTER" wrappingWidth="100.576171875" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button id="green" fx:id="hour111" mnemonicParsing="false" onAction="#busy" prefHeight="36.0" prefWidth="88.0" stylesheets="@application.css" text="10:00" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button id="green" mnemonicParsing="false" prefHeight="36.0" prefWidth="88.0" stylesheets="@application.css" text="10:45" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="36.0" prefWidth="88.0" stylesheets="@application.css" text="11:30" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="36.0" prefWidth="88.0" stylesheets="@application.css" text="13:00" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button id="green" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@application.css" text="13:45" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="97.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="106.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="107.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="415.0" minWidth="10.0" prefWidth="415.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets bottom="50.0" left="160.0" top="60.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+	</children>
+</AnchorPane>
