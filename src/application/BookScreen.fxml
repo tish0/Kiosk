@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import jfxtras.scene.control.*?>
 <?import jfxtras.labs.scene.control.*?>
 <?import javafx.geometry.*?>
@@ -18,15 +19,21 @@
          <bottom>
             <HBox alignment="BOTTOM_LEFT" prefHeight="76.0" prefWidth="1314.0" BorderPane.alignment="CENTER">
                <children>
-            		<Button alignment="BOTTOM_LEFT" mnemonicParsing="false" stylesheets="@../../../QL/src/application/application.css" text="Back">
+            		<Button fx:id="back" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#openWelcome" stylesheets="@../urls/application.css" text="Back">
                      <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" />
                      </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" stylesheets="@../../../QL/src/application/application.css" text="Next">
+                  <Button fx:id="btnNext" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#OpenSecondPage" stylesheets="@../urls/application.css" text="Next">
                      <HBox.margin>
                         <Insets bottom="20.0" left="1160.0" />
                      </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                  
                     
@@ -57,6 +64,9 @@
                            <padding>
                               <Insets top="30.0" />
                            </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
                   		</Label>
                      </children>
                   </VBox>
@@ -74,12 +84,15 @@
                      <VBox.margin>
                         <Insets top="60.0" />
                      </VBox.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
             		</Label>
-            		<MenuButton fx:id="pp" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="153.0" stylesheets="@application.css" text="Professors" textAlignment="CENTER" textFill="WHITE">
+            		<MenuButton fx:id="pp" alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="177.0" stylesheets="@application.css" text="Coordinators" textAlignment="CENTER" textFill="WHITE">
             			<items>
             				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="John Smith" />
             				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTableC" text="Alan Harper" />
-            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="Charlie Sheene" />
+            				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="Charlie Sheen" />
             				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTableC" text="Barry Joe" />
             				<MenuItem mnemonicParsing="false" onAction="#OpenTimeTable" text="Frank Lampard" />
             			</items>

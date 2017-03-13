@@ -32,7 +32,8 @@ public class BookScreen extends Application {
 	private Button hour40;
 	@FXML
 	private Button btnNext;
-	
+	@FXML
+	private Button back;
 	
 	
 	@Override
@@ -51,21 +52,33 @@ public class BookScreen extends Application {
 			e.printStackTrace();
 		}
 	}
-//	
-//	@FXML
-//	public void OpenUrlsPage(ActionEvent event) throws Exception {               
-//        try {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Urls.fxml"));
-//                Parent root1 = (Parent) fxmlLoader.load();
-//                Stage stage = new Stage();
-//                stage.setScene(new Scene(root1)); 
-//               stage.setFullScreen(true);
-//                stage.show();
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//}
 	
+	@FXML
+	public void OpenSecondPage(ActionEvent event) throws Exception {               
+        try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/secondPage/BookSecondPage.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1)); 
+                stage.setFullScreen(true);
+                stage.show();
+        } catch(Exception e) {
+           e.printStackTrace();
+          }
+}
+	@FXML
+	public void openWelcome(ActionEvent event) throws Exception {               
+        try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/welcomeScreen/WelcomeScreen.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1)); 
+               stage.setFullScreen(true);
+                stage.show();
+        } catch(Exception e) {
+           e.printStackTrace();
+          }
+}	
 	@FXML
 	public void OpenTimeTable(ActionEvent event){
 		try{
@@ -107,7 +120,7 @@ public class BookScreen extends Application {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String[] args) {
-		launch(args);
-	}
+//	public static void main(String[] args) {
+//		launch(args);
+//	}
 }

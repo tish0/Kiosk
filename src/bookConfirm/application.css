@@ -38,12 +38,6 @@
         -fx-cursor: pointer;
 		-fx-cursor: hand;
 }
-.TextField{
-
-        -fx-border-radius:15px;
-        -fx-background-radius: 8px;
-      
-}
 .titled-pane:focused > .title > .arrow-button .arrow {
     /* do not highlight the title pane arrow on focus */
     -fx-background-color: #606060;
