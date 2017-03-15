@@ -2,14 +2,23 @@ package bookConfirm;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import screenFramework.ScreenController;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 
-public class BookConfirmController {
+public class BookConfirmController implements Initializable, screenFramework.ControlledScreen{
+	
+	ScreenController myController;
+	
 	@FXML
 	private Button back;
 	@FXML
@@ -19,26 +28,25 @@ public class BookConfirmController {
 	// Event Listener on Button[#back].onAction
 	@FXML
 	public void openBookSecondPage(ActionEvent event) throws Exception {               
-		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/secondPage/BookSecondPage.fxml"));
-			Parent root1 = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root1)); 
-			stage.setFullScreen(true);
-			stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+
+			 myController.setScreen(screenFramework.ScreensFramework.screen3ID);		
 	}
 	
 	@FXML
 	public void OpenThanks(ActionEvent event){
-		try{
-			thanks.setVisible(true);
+		myController.setScreen(screenFramework.ScreensFramework.screen6ID);
+	}
+
+	
+	public void setScreenParent(ScreenController screenParent) {
+		 myController = screenParent;
 		
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+	}
+
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="588.0" prefWidth="968.0" style="-fx-background-color: #1B3A1B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookConfirm.BookConfirmController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #1B3A1B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookConfirm.BookConfirmController">
 	<children>
       <BorderPane layoutX="80.0" layoutY="88.0" prefHeight="588.0" prefWidth="701.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -48,9 +48,9 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="358.0">
                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="140.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@logo.png" />
+                              <Image url="@2-reverse-50logo-01.png" />
                            </image>
                         </ImageView>
                      </children>

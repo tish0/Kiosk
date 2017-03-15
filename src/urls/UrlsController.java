@@ -19,8 +19,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import screenFramework.ScreenController;
+import screenFramework.ScreensFramework;
+import screenFramework.ScreenController;
 
-public class UrlsController implements Initializable{
+public class UrlsController implements Initializable, screenFramework.ControlledScreen{
+	
+	ScreenController myController;
+	
 	@FXML
 	private Button wb1,wb2,wb3,wb4,wb5,wb6,backButton,forwardButton,mainMenu;
 	@FXML
@@ -38,6 +44,11 @@ public class UrlsController implements Initializable{
 			"http://www.algonquincollege.com/careers/career-opportunities/",
 			"http://www.algonquincollege.com/future-students/"
 	};
+	
+	public void setScreenParent(ScreenController screenParent) {
+		 myController = screenParent;
+		
+	}
 	
 	
 	private EventHandler<ActionEvent> go = new EventHandler<ActionEvent>() {
@@ -156,16 +167,7 @@ public class UrlsController implements Initializable{
 	}
 	@FXML
 	public void OpenMainMenu(ActionEvent event) throws Exception {               
-        try {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/welcomeScreen/WelcomeScreen.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1)); 
-               stage.setFullScreen(true);
-                stage.show();
-        } catch(Exception e) {
-           e.printStackTrace();
-          }
+		 myController.setScreen(screenFramework.ScreensFramework.screen1ID);
 }
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
@@ -184,5 +186,10 @@ public class UrlsController implements Initializable{
 			engine.load("http://" + homeAddress);
 			
 		}
+
+		/* (non-Javadoc)
+		 * @see screenFramework.ControlledScreen#setScreenParent(screenFramework.ScreenController)
+		 */
+		
 
 }
